@@ -1,0 +1,12 @@
+public class ContohException2 {
+    public static void main(String[] args) {
+        try {
+            int hasilPembagian = 10 / 0; // Pembagian dengan angka nol
+            System.out.println("Hasil pembagian: " + hasilPembagian);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Pembagian dengan angka nol tidak diizinkan.");
+        } finally {
+            System.out.println("Program selesai.");
+        }
+    }
+}
