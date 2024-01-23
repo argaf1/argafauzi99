@@ -1,24 +1,19 @@
-public class ExampleExceptionHandling {
+import java.util.Scanner;
+
+public class ContohException1 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
         try {
-            // Potensial terjadi exception
-            int hasil = divide(10, 0);
-            System.out.println("Hasil pembagian: " + hasil);
-        } catch (ArithmeticException e) {
-            // Menangani exception ArithmeticException
-            System.out.println("Error: Terjadi pembagian dengan nol.");
-            e.printStackTrace();  // Menampilkan trace exception (opsional)
+            System.out.print("Masukkan sebuah angka: ");
+            String input = scanner.nextLine();
+            int angka = Integer.parseInt(input);
+            System.out.println("Angka yang dimasukkan: " + angka);
+        } catch (NumberFormatException e) {
+            System.out.println("Error: Masukkan harus berupa angka.");
         } finally {
-            // Blok ini akan selalu dijalankan, terlepas dari apakah exception terjadi atau tidak
-            System.out.println("Ini akan selalu dijalankan.");
+            System.out.println("Program selesai.");
         }
-
-        // Kode lainnya tetap berjalan setelah penanganan exception
-        System.out.println("Program selesai.");
-    }
-
-    // Fungsi pembagian yang dapat menimbulkan exception
-    private static int divide(int numerator, int denominator) {
-        return numerator / denominator;
     }
 }
+
